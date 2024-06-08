@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { LoginpageComponent } from './loginpage/loginpage.component';
-import { RegisterpageComponent } from './registerpage/registerpage.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DetailspageComponent } from './detailspage/detailspage.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DetailspageComponent } from './pages/detailspage/detailspage.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,11 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
     LoginpageComponent,
     RegisterpageComponent,
     NavbarComponent,
-    DetailspageComponent
+    DetailspageComponent,
+    CardsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
