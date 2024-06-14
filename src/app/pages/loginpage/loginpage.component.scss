@@ -1,6 +1,7 @@
 /* my-component.styles.css */
 .page-background {
     background-color: #fff;
+    padding-top: 30px;
 }
 
 .logo-img
@@ -11,10 +12,11 @@
 .login-content {
   width: 50%; /* Set each div to take up 50% of the container width */
   float: left; /* Float them left so they appear next to each other */
+  height: 100%;
 }
 .page-background
 {
-    padding: 20px;
+    // padding: 20px;
 }
 .heading
 {

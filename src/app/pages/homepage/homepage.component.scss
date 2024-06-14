@@ -1,0 +1,19 @@
+.container
+{
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+}
+.trad,
+.non-trad
+{
+    padding: 10px 20px;
+    margin: 20px; /* Add some spacing between buttons */
+    background-color: #fff; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    height: 250px;
+    width: 100%;
+}
