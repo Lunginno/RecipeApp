@@ -4,16 +4,81 @@
     flex-direction: column; /* Arrange buttons vertically */
     align-items: center; /* Center buttons horizontally */
 }
-.trad,
-.non-trad
+.card1
 {
-    padding: 10px 20px;
-    margin: 20px; /* Add some spacing between buttons */
-    background-color: #fff; /* Button background color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    height: 250px;
+    height: 230px;
     width: 100%;
+    background-image: url('/assets/trad.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border: 1px solid #fff; /* Add a border */
+}
+.card2
+{
+    border-radius: 20px;
+    height: 230px;
+    width: 100%;
+    background-image: url('/assets/nontrad.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border: 1px solid #fff; /* Add a border */
+}
+.card-body1
+{
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    margin-top: 70px;
+    font-weight: 800;
+    background-color: #335314;
+    width: 30%;
+    height: 60px;
+    position: relative;
+    left: 0px;
+    bottom: 70px;
+    border-radius: 8px;
+}
+.card-body2
+{
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    margin-top: 70px;
+    font-weight: 800;
+    background-color: #335314;
+    width: 30%;
+    height: 60px;
+    position: relative;
+    left: 0px;
+    bottom: 70px;
+    border-radius: 8px;
+}
+.card-quote
+{
+    width: 50%;
+    margin-left: 10%;
+}
+.btn-go
+{
+    width: 400px;
+    height: 70px;
+    // margin-left: 60px;
+    background-color: white; 
+    border: 1px solid white; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; /* add some border-radius for a softer look */
+    cursor: pointer;
+    outline: none; /* remove default button outline */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow size and color */
+    transition: box-shadow 0.3s ease; /* Add a smooth transition */
+    color: black;
+    text-decoration: none;
 }
