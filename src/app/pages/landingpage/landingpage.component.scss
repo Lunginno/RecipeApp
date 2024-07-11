@@ -1,48 +1,15 @@
-.container 
-{
-    overflow: auto; 
+.bottom-image {
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Adjust right distance from the edge of the page or container */
+    // transform: translateX(-50%);
+    width: 50%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-top-left-radius: 100%; /* Rounded corner for top-left */
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 20px;
     height: 100%;
-    position: fixed;
-    padding: 0;
-}
-.info 
-{
-    float: left;
-    width: 50%; 
-    margin-top: 180px;
-    margin-left: 60px;
-}
-.image 
-{
-    float: right;
-    position: fixed;
-    border-style: solid;
-    border-width: 0 0 250px 250px; 
-    border-color: #fff;
-    transform-origin: bottom right;
-    transform: rotate(39deg);
-    // padding-top: 30px;
-    // width: 50%;
-}
-.explore
-{
-    width: 400px;
-    height: 70px;
-    // margin-left: 60px;
-    background-color: #4C7C1E; /* Light gray */
-    color: #333; /* Dark gray */
-    border: 1px solid #ccc; /* Medium gray */
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border-radius: 5px; /* add some border-radius for a softer look */
-    cursor: pointer;
-    outline: none; /* remove default button outline */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow size and color */
-    transition: box-shadow 0.3s ease; /* Add a smooth transition */
-    color: #fff;
-    
-}
-.explore:hover {
-    background-color: #85a835; /*lighter green on hover*/
-    border-color: #bbb; 
-}
+    top: 145px;
+    margin-right: 20px;
+    opacity: 0.8;
+  }

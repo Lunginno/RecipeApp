@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LoginpageComponent {
 
+  isSignUp: boolean = true;
+
+  toggleForm(isSignUp: boolean) {
+    this.isSignUp = isSignUp;
+  }
 }
