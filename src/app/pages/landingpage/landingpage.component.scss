@@ -1,15 +1,98 @@
 .bottom-image {
-    position: fixed;
-    bottom: 0;
-    right: 0; /* Adjust right distance from the edge of the page or container */
+    position: relative;
+    bottom: 420px;
+    left: 1210px; /* Adjust right distance from the edge of the page or container */
     // transform: translateX(-50%);
-    width: 50%; /* Adjust width as needed */
+    width: 40%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     border-top-left-radius: 100%; /* Rounded corner for top-left */
     border-bottom-left-radius: 100%;
     border-top-right-radius: 20px;
     height: 100%;
-    top: 145px;
-    margin-right: 20px;
-    opacity: 0.8;
+    // top: 45px;
+    // margin-right: 20px;
+    display: block;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    // opacity: 0.8;
   }
+  .about-image
+  {
+    position: relative;
+    right: 435px;
+    bottom: 470px;
+    border-top-right-radius: 100%; /* Rounded corner for top-left */
+    border-bottom-right-radius: 100%;
+    border-top-left-radius: 20px;
+    width: 40%;
+    height: 100%;
+  }
+  .welcome
+  {
+    margin-top: 300px;
+    margin-left: 90px;
+  }
+  .aboutus
+  {
+    margin-top: 120px;
+    margin-left: 40px;
+  }
+  .contactus
+  {
+    margin-top: 120px;
+    margin-left: 40px;
+  }
+  .slogan
+  {
+    margin-top: 20px;
+    margin-left: 90px;
+  }
+  .explore
+  {
+    margin-top: 30px;
+    margin-left: 90px;
+    border-radius: 10px;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(51, 83, 20, 0.8);
+    color: white;
+    border: none;
+    font-weight: 700;
+  }
+  .content
+  {
+    position: relative;
+    right: 370px;
+  }
+  .recipe
+  {
+    color: #335314;
+    font-weight: 800;
+  }
+  .plate {
+    width: 200px;
+    height: 150px;
+    background-color: #335314; /* Plate color */
+    border-radius: 50% 50% 0 0; /* Creates a round shape */
+    position: relative;
+    overflow: hidden;
+    top: 100px;
+    left: 40px;
+    margin-right: 20px; /* Space between shape and image */
+}
+
+/* Example CSS for plate's inner content */
+.plate::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 15px;
+    background-color: #efe7c6; /* Plate edge color */
+    position: absolute;
+    bottom: 0;
+}
+section {
+  padding: 80px 0;
+  text-align: center;
+  min-height: 100vh; /* Ensures each section takes up at least the full viewport height */
+  position: relative;
+}
