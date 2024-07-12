@@ -16,9 +16,13 @@
 }
 .categories
 {
-    margin-top: 20px;
+    margin-top: 80px;
     margin-bottom: 40px;
     margin-left: 20px;
+}
+.super
+{
+    margin-top: 50px;
 }
 .carousel
 {
@@ -65,4 +69,58 @@
     border-radius: 5px;
     font-size: 15px;
   }
+  .card-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust number of columns as per your design */
+    gap: 20px; /* Adjust gap between cards */
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust background color and opacity */
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .card-info-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .rating {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .author,
+  .recipe-type {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+  }
+  
   
