@@ -22,7 +22,14 @@ h1 {
 	font-weight: bold;
 	margin: 0;
 }
-
+.w
+{
+	color: #e9eae0;
+}
+.c
+{
+	color: #335314;
+}
 h2 {
 	text-align: center;
 }
@@ -73,7 +80,7 @@ button.ghost {
 }
 
 form {
-	background-color: #FFFFFF;
+	background-color: #e9eae0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -92,7 +99,7 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #e9eae0;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
