@@ -1,0 +1,46 @@
+.title
+{
+    height: 100px;
+    border: 2px solid black; /* Example border style */
+    padding: 20px;
+    text-align: center;
+}
+.info
+{
+    height: 80px;
+    border: 2px solid black; /* Example border style */
+    border-top: none;
+    padding: 20px;
+    text-align: center;
+}
+.info p {
+    display: inline-block; /* Make <p> elements inline */
+    margin: 0; /* Remove default margins */
+}
+.info p:not(:last-child) {
+    margin-right: 10px; /* Add space between <p> elements */
+}
+.container {
+    display: flex; /* Use flexbox to align divs side by side */
+    border-top: 1px solid #ccc; /* Border on top of the container */
+}
+.left-div {
+    flex: 1; /* Take up remaining space */
+    border-right: 1px solid #ccc; /* Border on the right side */
+    padding: 10px; /* Example padding */
+}
+
+.right-div {
+    flex: 2; /* Take slightly more space than left-div */
+    padding: 10px; /* Example padding */
+}
+.recipeimg
+{
+    height: 300px;
+    width: 50%;
+    margin-left: 260px;
+}
+.dir
+{
+    margin-top: 20px;
+}
