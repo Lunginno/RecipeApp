@@ -1,39 +1,54 @@
 <body>
-<div class="container" id="container" [ngClass]="{'right-panel-active': isSignUp}">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1 class="c">Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1 class="c">Sign in</h1>
-
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1 class="w">Welcome Back!</h1>
-				<p>Let's dig in! 😋</p>
-				<button class="ghost" id="signIn" (click)="toggleForm(false)">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1 class="w">Welcome to TasteLux! </h1>
-				<p>savour every moment, one recipe at a time.</p>
-				<button class="ghost" id="signUp" (click)="toggleForm(true)">Sign Up</button>
+	<div class="container" id="container" [ngClass]="{'right-panel-active': isSignUp}">
+		<div class="form-container sign-up-container">
+			<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+				<h1 class="c">Create Account</h1>
+				<input type="text" placeholder="Name" formControlName="name" />
+				<div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched" class="text-danger">
+					Name is required
+				</div>
+				<input type="email" placeholder="Email" formControlName="email" />
+				<div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
+					Email is required and must be a valid email address
+				</div>
+				<input type="password" placeholder="Password" formControlName="password" />
+				<div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
+					Password is required
+				</div>
+				<button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+				<h1 class="c">Sign in</h1>
+				<input type="email" placeholder="Email" formControlName="email" />
+				<div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="text-danger">
+					Email is required and must be a valid email address
+				</div>
+				<input type="password" placeholder="Password" formControlName="password" />
+				<div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-danger">
+					Password is required
+				</div>
+				<a href="#">Forgot your password?</a>
+				<button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1 class="w">Welcome Back!</h1>
+					<p>Let's dig in! 😋</p>
+					<button class="ghost" id="signIn" (click)="toggleForm(false)">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1 class="w">Welcome to TasteLux! </h1>
+					<p>savour every moment, one recipe at a time.</p>
+					<button class="ghost" id="signUp" (click)="toggleForm(true)">Sign Up</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+	
 
 
 </body>
