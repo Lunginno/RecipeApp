@@ -15,17 +15,53 @@
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
     // opacity: 0.8;
   }
+  #about {
+    padding: 20px; /* Optional: Add padding around the section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: auto; /* Center align content */
+    height: 100%;
+  }
+  .scrollable-content {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Adjust max-height as needed */
+    padding-right: 20px; /* Optional: Add right padding to avoid content overlap with scrollbar */
+  }
   .about-image
   {
+    margin-top: 120px;
     position: relative;
-    right: 435px;
-    bottom: 470px;
+    right: 120px;
+    top: 10px;
     border-top-right-radius: 100%; /* Rounded corner for top-left */
     border-bottom-right-radius: 100%;
     border-top-left-radius: 20px;
     width: 40%;
+    height: auto;
     height: 100%;
+    display: block;
+    margin-right: 200px; /* Space between image and text */
   }
+  .about-text {
+    flex: 1; /* Allow text to take remaining space */
+  }
+  
+  .about-text h1 {
+    font-size: 24px; /* Adjust heading font size */
+  }
+  
+  .about-text p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 1.6; /* Adjust line height for readability */
+  }
+  
   .welcome
   {
     margin-top: 300px;
@@ -33,7 +69,7 @@
   }
   .aboutus
   {
-    margin-top: 120px;
+    margin-top: 80px;
     margin-left: 40px;
   }
   .contactus
@@ -64,6 +100,11 @@
     right: 370px;
   }
   .recipe
+  {
+    color: #335314;
+    font-weight: 800;
+  }
+  .tag
   {
     color: #335314;
     font-weight: 800;

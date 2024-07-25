@@ -9,6 +9,10 @@ import { DetailspageComponent } from './pages/detailspage/detailspage.component'
 import { CardsComponent } from './components/cards/cards.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { LoginComponent } from './pages/loginpage/loginpage.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriesComponent } from './pages/categories/categories.component';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +22,11 @@ import { LoginComponent } from './pages/loginpage/loginpage.component';
     DetailspageComponent,
     CardsComponent,
     LandingpageComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    CategoriesComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,  HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
