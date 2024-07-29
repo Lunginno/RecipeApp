@@ -1,51 +1,32 @@
 <app-navbar></app-navbar>
 <div class="body">
-    <div class="content">
-<div class="title">
-    <h1 style="color: #45622a;">AVOCADO TOAST WITH EGG</h1>
-</div>
-<div class="info">
-    <p>SERVES<span style="color: #45622a; font-weight: 900;"> 2</span></p>
-    <p>|</p>
-    <p>PREP<span style="color: #45622a; font-weight: 900;"> 5 min</span></p>
-    <p>|</p>
-    <p>COOK<span style="color: #45622a; font-weight: 900;"> 5 min</span></p>
-    <p>|</p>
-    <p>READY<span style="color: #45622a; font-weight: 900;"> 10 min</span></p>
-</div>
-<div class="container">
-    <div class="left-div">
-        <h1 class="ing" style="color: #45622a;">Ingredients</h1>
-        <p style="margin-left: 20px;">1 tbsp Olive Oil
-            <br>
-            Steak
-            <br>
-            1 tsp Salt
-            <br>
-            1 tsp Pepper
-            <br>
-            Thyme
-            <br>
-            Butter
-        </p>
+  <div class="content">
+    <div class="title">
+      <h1 style="color: #45622a;">{{ meal?.strMeal }}</h1>
     </div>
-    <div class="right-div">
-        <img src="/assets/login.jpeg" class="recipeimg" alt="">
+    <div class="info">
+      <p>SERVES<span style="color: #45622a; font-weight: 900;"> {{ meal?.strServings || 'N/A' }}</span></p>
+      <p>|</p>
+      <p>PREP<span style="color: #45622a; font-weight: 900;"> {{ meal?.strPrepTime || 'N/A'}} min</span></p>
+      <p>|</p>
+      <p>COOK<span style="color: #45622a; font-weight: 900;"> {{ meal?.strCookTime || 'N/A' }} min</span></p>
+      <p>|</p>
+      <p>READY<span style="color: #45622a; font-weight: 900;"> {{ meal?.strReadyTime || 'N/A' }} min</span></p>
+    </div>
+    <div class="container">
+      <div class="left-div">
+        <h1 class="ing" style="color: #45622a;">Ingredients</h1>
+        <p style="margin-left: 20px;">
+          <span *ngFor="let ingredient of getIngredients()">{{ ingredient }}<br></span>
+        </p>
+      </div>
+      <div class="right-div">
+        <img [src]="meal?.strMealThumb" class="recipeimg" alt="Recipe Image">
         <h1 class="dir" style="color: darkgreen;">Directions</h1>
         <p style="margin-left: 30px; margin-right: 120px;">
-            1. Bring to room temp! This makes an amazing difference to cooking through evenly rather than ending up with a thick overcooked band in order for the very centre to be cooked to your liking.
-            <br>
-            2. Pat dry and season the steak generously with salt and pepper - this helps form that amazing crust we all know and love about great steaks.
-            <br>
-            3. Get your skillet SMOKING HOT before putting the steak in - again, for the crust.
-            <br>
-            4. WARNING: The butter will sputter when you add the thyme, so stand back!
-            <br>
-            5. Take the steak off the stove BEFORE your desired internal temperature (see chart below) because the internal temperature will continue to rise as it rests; and
-            <br>
-            6. REST your steak for 5 to 10 minutes so it sucks its own juices back in and the fibres relax. This is a must-do step for any protein you cook hard and fast!
+          {{ meal?.strInstructions }}
         </p>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </div>

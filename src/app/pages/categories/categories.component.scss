@@ -1,0 +1,48 @@
+.popular-items-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr; /* Ensures rows are flexible and maintain aspect ratio */
+    gap: 20px; /* Space between items */
+  }
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    white-space: nowrap;          /* Prevents text from wrapping to the next line */
+    overflow: hidden;            /* Hides the overflowed text */
+    text-overflow: ellipsis;     /* Adds ellipsis (...) when text overflows */
+    display: block;              /* Ensures the block level styling for text-overflow to work */
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid #335314;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
+    background-color: #c4d8c1; /* Very light shade of #335314 */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
+  }
+  .popular-items-section
+  {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .popular
+  {
+    text-align: center;
+    margin-top: 20px;
+    font-family: monospace;
+    font-weight: 800;
+    color: #335314;
+  }
+.container-cat
+{
+    margin-left: 40px;
+    margin-right: 40px;
+}

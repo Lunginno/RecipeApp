@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DetailspageComponent } from './pages/detailspage/detailspage.component';
+import { DetailsComponent } from './pages/detailspage/detailspage.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { LoginComponent } from './pages/loginpage/loginpage.component';
@@ -19,7 +19,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
     AppComponent,
     HomepageComponent,
     NavbarComponent,
-    DetailspageComponent,
+    DetailsComponent,
     CardsComponent,
     LandingpageComponent,
     LoginComponent,

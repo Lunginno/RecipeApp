@@ -25,44 +25,46 @@
 </div>
 <h2 class="categories">Popular Categories</h2>
 <div class="category-grid">
-  <div class="category">
+  <a [routerLink]="['/categories', 'Breakfast']" class="category">
     <div class="circle-container">
-      <img src="/assets/pasta.jpeg" alt="Category 1">
-    </div>
-    <div class="category-label">Pasta</div>
-  </div>
-  <div class="category">
-    <div class="circle-container">
-      <img src="/assets/pizza.jpeg" alt="Category 2">
-    </div>
-    <div class="category-label">Pizza</div>
-  </div>
-  <div class="category">
-    <div class="circle-container">
-      <img src="/assets/vegan.jpeg" alt="Category 3">
-    </div>
-    <div class="category-label">Vegan</div>
-  </div>
-  <div class="category">
-    <div class="circle-container">
-      <img src="/assets/dessert.jpeg" alt="Category 3">
-    </div>
-    <div class="category-label">Desserts</div>
-  </div>
-  <div class="category">
-    <div class="circle-container">
-      <img src="/assets/smoothie.jpeg" alt="Category 3">
-    </div>
-    <div class="category-label">Smoothies</div>
-  </div>
-  <div class="category">
-    <div class="circle-container">
-      <img src="/assets/breakfast.jpeg" alt="Category 3">
+      <img src="/assets/breakfast.jpeg" alt="Breakfast">
     </div>
     <div class="category-label">Breakfast</div>
-  </div>
-  <!-- Add more categories as needed -->
+  </a>
+  <a [routerLink]="['/categories', 'Pasta']" class="category">
+    <div class="circle-container">
+      <img src="/assets/pasta.jpeg" alt="Pasta">
+    </div>
+    <div class="category-label">Pasta</div>
+  </a>
+  <a [routerLink]="['/categories', 'Seafood']" class="category">
+    <div class="circle-container">
+      <img src="/assets/smoothie.jpeg" alt="Sea Food">
+    </div>
+    <div class="category-label">Sea Food</div>
+  </a>
+  <a [routerLink]="['/categories', 'Vegan']" class="category">
+    <div class="circle-container">
+      <img src="/assets/vegan.jpeg" alt="Vegan">
+    </div>
+    <div class="category-label">Vegan</div>
+  </a>
+  <a [routerLink]="['/categories', 'Dessert']" class="category">
+    <div class="circle-container">
+      <img src="/assets/dessert.jpeg" alt="Desserts">
+    </div>
+    <div class="category-label">Desserts</div>
+  </a>
+  <a [routerLink]="['/categories', 'Side']" class="category">
+    <div class="circle-container">
+      <img src="/assets/pizza.jpeg" alt="Side Dishes">
+    </div>
+    <div class="category-label">Side Dishes</div>
+  </a>
 </div>
+
+
+
 <!-- <div class="scat">
 <h2 class="super">Super Delicious</h2>
 <h5>Top picks from each category 😋 - picked with love by TasteLux</h5>
