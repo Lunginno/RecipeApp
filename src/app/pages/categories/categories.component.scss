@@ -1,48 +1,105 @@
+/* Grid layout for items */
 .popular-items-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr; /* Ensures rows are flexible and maintain aspect ratio */
-    gap: 20px; /* Space between items */
-  }
-  .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    white-space: nowrap;          /* Prevents text from wrapping to the next line */
-    overflow: hidden;            /* Hides the overflowed text */
-    text-overflow: ellipsis;     /* Adds ellipsis (...) when text overflows */
-    display: block;              /* Ensures the block level styling for text-overflow to work */
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    // border: 1px solid #335314;
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
-    background-color: #c4d8c1; /* Very light shade of #335314 */
-  }
-  
-  .card:hover {
-    transform: translateY(-10px); /* Lifts the card up */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
-  }
-  .popular-items-section
-  {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  .popular
-  {
-    text-align: center;
-    margin-top: 20px;
-    font-family: monospace;
-    font-weight: 800;
-    color: #335314;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr; /* Ensures rows are flexible and maintain aspect ratio */
+  gap: 20px; /* Space between items */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Title Styling */
+.popular {
+  text-align: center;
+  margin-top: 30px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #e9eae0;
+}
+
+/* Card Styling */
+.card {
+  position: relative; /* To position the icon absolutely */
+  display: flex;
+  flex-direction: column;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
+  background-color: #c4d8c1; /* Very light shade of #335314 */
+  align-items: center; /* Center items horizontally */
+  padding: 10px; /* Padding for spacing */
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-10px); /* Lifts the card up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
+}
+
+/* Image Styling */
+.card-img-top {
+  width: 150px; /* Fixed width for the image */
+  height: 150px; /* Fixed height for the image */
+  border-radius: 50%; /* Round image */
+  object-fit: cover; /* Crop the image */
+  margin-top: 10px; /* Margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect for the image */
+  z-index: 10;
+}
+
+/* Card Body Styling */
+.card-body {
+  text-align: center; /* Center-align text */
+  padding: 10px; /* Padding for spacing */
+}
+
+/* Add Section (Icon) Styling */
+.add-section {
+  display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items to the center */
+    gap: 180px; /* Space between the <p> and <svg> */
+    position: absolute; /* Allow positioning of the icon */
+    bottom: 0px; /* Distance from the bottom */
+    left: 0px; /* Distance from the right */
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background color for better visibility */
+    border-radius: 5px; /* Optional: rounded corners for better appearance */
+    z-index: 1;
+}
+
+/* Card Title Styling */
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides the overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) when text overflows */
+  display: block; /* Ensures the block level styling for text-overflow to work */
+}
+
 .container-cat
 {
     margin-left: 40px;
     margin-right: 40px;
 }
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1; /* Send to the back */
+}
+
+.pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers entire container */
+}
+
+
+
+
+
+
