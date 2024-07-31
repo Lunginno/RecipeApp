@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category/category.service';
 @Component({
   selector: 'app-detailspage',
@@ -7,11 +7,14 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./detailspage.component.scss']
 })
 export class DetailsComponent implements OnInit {
+
   meal: any;
+  category!: string;
 
   constructor(
     private route: ActivatedRoute,
-    private categorysevice: CategoryService
+    private categorysevice: CategoryService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,10 +29,7 @@ export class DetailsComponent implements OnInit {
       this.meal = data.meals[0];
     });
   }
-  transformInstructions(instructions: string): string {
-    if (!instructions) return '';
-    return instructions.replace(/\. /g, '.<br>');
-  }
+  
   getIngredients(): string[] {
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
@@ -41,5 +41,16 @@ export class DetailsComponent implements OnInit {
     }
     return ingredients;
   }
+  fetchMeals(): void {
+    if (this.category) {
+      this.categorysevice.getMealsByCategory(this.category).subscribe(data => {
+        this.meal = data.meals;
+      });
+    }
+  }
+  goBack() {
+    window.history.back();
+  }
+  
 }
 

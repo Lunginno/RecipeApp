@@ -1,56 +1,86 @@
 <body>
-	<div class="container" id="container" [ngClass]="{'right-panel-active': isSignUp}">
-		<div class="form-container sign-up-container">
-			<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-				<h1 class="c">Create Account</h1>
-				<input type="text" placeholder="Name" formControlName="name" />
-				<div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched" class="text-danger">
-					Name is required
-				</div>
-				<input type="email" placeholder="Email" formControlName="email" />
-				<div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
-					Email is required and must be a valid email address
-				</div>
-				<input type="password" placeholder="Password" formControlName="password" />
-				<div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
-					Password is required
-				</div>
-				<button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
-			</form>
-		</div>
-		<div class="form-container sign-in-container">
-			<form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
-				<h1 class="c">Sign in</h1>
-				<input type="email" placeholder="Email" formControlName="email" />
-				<div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="text-danger">
-					Email is required and must be a valid email address
-				</div>
-				<input type="password" placeholder="Password" formControlName="password" />
-				<div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-danger">
-					Password is required
-				</div>
-				<a href="#">Forgot your password?</a>
-				<button type="submit" [disabled]="signInForm.invalid">Sign In</button>
-			</form>
-		</div>
-		<div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-left">
-					<h1 class="w">Welcome Back!</h1>
-					<p>Let's dig in! 😋</p>
-					<button class="ghost" id="signIn" (click)="toggleForm(false)">Sign In</button>
-				</div>
-				<div class="overlay-panel overlay-right">
-					<h1 class="w">Welcome to TasteLux! </h1>
-					<p>savour every moment, one recipe at a time.</p>
-					<button class="ghost" id="signUp" (click)="toggleForm(true)">Sign Up</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+    <div class="container" [ngClass]="{'right-panel-active': isSignUp}">
+        <div class="form-container sign-up-container" *ngIf="isSignUp">
+            <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+                <h1 class="c">Create Account</h1>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name" aria-label="Name">
+                    <div *ngIf="signUpForm.get('name')?.invalid && (signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty)" class="text-danger">
+                        <p *ngIf="signUpForm.get('name')?.errors?.['required']">Name is required.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" aria-label="Email Address">
+                    <div *ngIf="signUpForm.get('email')?.invalid && (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty)" class="text-danger">
+                        <p *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</p>
+                        <p *ngIf="signUpForm.get('email')?.errors?.['email']">Invalid email format.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" aria-label="Password">
+                    <div *ngIf="signUpForm.get('password')?.invalid && (signUpForm.get('password')?.touched || signUpForm.get('password')?.dirty)" class="text-danger">
+                        <p *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword">Confirm Password:</label>
+                    <input type="password" formControlName="cpassword" class="form-control" id="cpassword" placeholder="Confirm Password" aria-label="Confirm Password">
+                    <div *ngIf="signUpForm.get('cpassword')?.invalid && (signUpForm.get('cpassword')?.touched || signUpForm.get('cpassword')?.dirty)" class="text-danger">
+                        <p *ngIf="signUpForm.get('cpassword')?.errors?.['passwordMismatch']">Passwords must match.</p>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+                <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+                <p *ngIf="error" class="text-danger">{{ error }}</p>
+            </form>
+        </div>
 
+        <div class="form-container sign-in-container" *ngIf="!isSignUp">
+            <form [formGroup]="login" (ngSubmit)="signInForm()">
+                <h2 class="c">Welcome Back!</h2>
+                <h6>To login, please enter your details.</h6>
+				<br>
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" formControlName="email" class="form-control" id="login-email" placeholder="e.g Lisa@gmail.com" aria-label="Email Address">
+                    <div *ngIf="login.get('email')?.invalid && (login.get('email')?.dirty || login.get('email')?.touched)" class="text-danger">
+                        <p *ngIf="login.get('email')?.errors?.['required']">Email is required.</p>
+                        <p *ngIf="login.get('email')?.errors?.['email']">Invalid email format.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" formControlName="password" class="form-control" id="login-password" placeholder="*******" aria-label="Password">
+                    <p>Forgot password? <a [routerLink]="['/reset-password']">Reset here</a></p>
+                    <div *ngIf="login.get('password')?.invalid && (login.get('password')?.dirty || login.get('password')?.touched)" class="text-danger">
+                        <p *ngIf="login.get('password')?.errors?.['required']">Password is required.</p>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="login.invalid">Login</button>
+                <p *ngIf="error" class="text-danger">{{ error }}</p>
+                <p>Don't have an account? <a (click)="toggleForm(true)">Register</a></p>
+            </form>
+        </div>
 
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="w">Welcome Back!</h1>
+                    <p>Let's dig in! 😋</p>
+                    <button class="ghost" (click)="toggleForm(false)">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="w">Welcome to TasteLux!</h1>
+                    <p>Savour every moment, one recipe at a time.</p>
+                    <button class="ghost" (click)="toggleForm(true)">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 
 

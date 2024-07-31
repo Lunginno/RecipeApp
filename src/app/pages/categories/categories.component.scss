@@ -4,8 +4,9 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr; /* Ensures rows are flexible and maintain aspect ratio */
   gap: 20px; /* Space between items */
-  margin-top: 50px;
+  margin-top: 250px;
   margin-bottom: 50px;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
 
 /* Title Styling */
@@ -24,9 +25,9 @@
   flex-direction: column;
   border: none;
   overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: background color for better visibility */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
-  background-color: #c4d8c1; /* Very light shade of #335314 */
   align-items: center; /* Center items horizontally */
   padding: 10px; /* Padding for spacing */
 }
@@ -62,8 +63,9 @@
     position: absolute; /* Allow positioning of the icon */
     bottom: 0px; /* Distance from the bottom */
     left: 0px; /* Distance from the right */
-    padding: 20px; 
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: background color for better visibility */
+    right: 0;
+    padding: 10px; 
+    background-color: #c4d8c1; /* Very light shade of #335314 */
     border-radius: 5px; /* Optional: rounded corners for better appearance */
     z-index: 1;
 }
@@ -82,22 +84,45 @@
 {
     margin-left: 40px;
     margin-right: 40px;
+    height: 100%;
 }
 .pic {
-  position: absolute;
+  position: fixed; /* Make sure the img inside .pic is positioned relative to .pic */
+  width: 100%; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  overflow: hidden; /* Hide the parts of the image that overflow */
+  background-color: #335314;
+  margin: 0;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 50%;
-  z-index: -1; /* Send to the back */
+  padding: 0;
+  z-index: 1000;
 }
-
-.pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure image covers entire container */
+.cat
+{
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c4d8c1;
+  font-weight: 600;
+  right: 600px;
 }
-
+.back {
+  position: absolute;
+  left: 100px;
+  top: 60px;
+  color: #c4d8c1;
+  width: 60px;
+  height: 60px;
+  display: inline-block; /* Ensures the div behaves as an inline block */
+  cursor: pointer; /* Adds a pointer cursor on hover to indicate it's clickable */
+}
+.back img {
+  width: 100%;
+  height: auto; /* Ensures the image scales correctly */
+}
 
 
 

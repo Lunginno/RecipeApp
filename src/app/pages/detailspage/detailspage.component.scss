@@ -1,32 +1,43 @@
-// .body
-// {
-//     background-image: url("/assets/background.jpeg"); /* Replace with your image path */
-//     background-size: cover; /* Ensures the image covers the entire div */
-//     background-position: center; /* Centers the image within the div */
-//     background-repeat: no-repeat; /* Prevents the image from repeating */
-// }
-.body
-{
-    background-color: rgba(200, 193, 147, 0.7);
-}
+
 .title
 {
+    display: flex; /* Use Flexbox layout */
+    align-items: center; /* Vertically center items */
+    gap: 100px; /* Space between items */
     height: 100px;
-    border: 2px solid black; /* Example border style */
+    border: none; 
     padding: 20px;
     text-align: center;
-    border-left: none;
-    border-right: none;
+    margin-top: 100px;
+    margin-left: 0px;
+    position: absolute;
 }
+
+  .recipeimg
+{
+    height: 240px;
+    width: 240px; /* Set width to the same value as height to ensure a perfect circle */
+    margin-left: 30%;
+    margin-top: 50px;
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+  
+  .meal {
+    margin: 0px; /* Remove default margins */
+    font-size: 80px;
+    position: relative;
+    right: 100px;
+    margin-left: 80px;
+   
+  }
 .info
 {
     height: 70px;
-    border: 2px solid black; /* Example border style */
     border-top: none;
     padding: 20px;
     text-align: center;
-    border-left: none;
-    border-right: none;
+    border: none;
     
 }
 .info p {
@@ -40,46 +51,49 @@
     display: flex; /* Use flexbox to align divs side by side */
     border-top: 1px solid #ccc; /* Border on top of the container */
     border: none;
+    height: 100vh;
+    position: relative;
+    top: 200px;
 }
-.content
-{
-    background-color: #c8c193;
-    margin-left: 250px;
-    margin-right: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    // border-right: 2px solid black;
-    // border-left: 2px solid black;
-    // padding-top: 200px;
-    border: none;
-    margin-top: 140px;
-}
+.back {
+    position: absolute;
+    left: 60px;
+    top: 50px;
+    color: #335314;
+    width: 60px;
+    height: 60px;
+    display: inline-block; /* Ensures the div behaves as an inline block */
+    cursor: pointer; /* Adds a pointer cursor on hover to indicate it's clickable */
+  }
 .left-div {
     flex: 1; /* Take up remaining space */
     border-right: 1px solid #ccc; /* Border on the right side */
     padding: 10px; /* Example padding */
-    border-right: 2px solid black; /* Black right border */
+    border: none;
+    position: relative;
+    top: 160px;
 }
 
 .right-div {
+    margin-top: 150px;
     flex: 2; /* Take slightly more space than left-div */
     padding: 10px; /* Example padding */
     border: none;
 }
-.recipeimg
-{
-    height: 240px;
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 40px;
-}
+
 .dir
 {
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 .ing
 {
-    margin-left: 5px;
+    margin-left: 0px;
     margin-bottom: 15px;
+}
+.bi
+{
+    position: relative;
+    right: 700px;
+    top: 60px;
 }

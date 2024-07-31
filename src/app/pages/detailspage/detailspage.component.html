@@ -1,17 +1,14 @@
-<app-navbar></app-navbar>
-<div class="body">
-  <div class="content">
+<!-- <app-navbar></app-navbar> -->
+
     <div class="title">
-      <h1 style="color: #45622a;">{{ meal?.strMeal }}</h1>
-    </div>
-    <div class="info">
-      <p>SERVES<span style="color: #45622a; font-weight: 900;"> {{ meal?.strServings || 'N/A' }}</span></p>
-      <p>|</p>
-      <p>PREP<span style="color: #45622a; font-weight: 900;"> {{ meal?.strPrepTime || 'N/A'}} min</span></p>
-      <p>|</p>
-      <p>COOK<span style="color: #45622a; font-weight: 900;"> {{ meal?.strCookTime || 'N/A' }} min</span></p>
-      <p>|</p>
-      <p>READY<span style="color: #45622a; font-weight: 900;"> {{ meal?.strReadyTime || 'N/A' }} min</span></p>
+      <div class="back">
+        <img src="/assets/back2.png" alt="" (click)="goBack()">
+     </div>
+      <img [src]="meal?.strMealThumb" class="recipeimg" alt="Recipe Image">
+      <h1 class="meal" style="color: #45622a;">{{ meal?.strMeal }}</h1>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" fill="#c4d8c1" class="bi bi-heart" viewBox="0 0 16 16">
+        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+    </svg> -->
     </div>
     <div class="container">
       <div class="left-div">
@@ -21,12 +18,11 @@
         </p>
       </div>
       <div class="right-div">
-        <img [src]="meal?.strMealThumb" class="recipeimg" alt="Recipe Image">
-        <h1 class="dir" style="color: darkgreen;">Directions</h1>
+        <h1 class="dir" style="color: darkgreen;">Instructions</h1>
         <p style="margin-left: 30px; margin-right: 120px;">
           {{ meal?.strInstructions }}
         </p>
       </div>
     </div>
-  </div>
-</div>
+ 
+

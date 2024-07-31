@@ -4,7 +4,13 @@
 * {
 	box-sizing: border-box;
 }
-
+label {
+	text-align: left; /* Ensure labels are aligned to the left */
+  }
+  .form-group {
+	display: flex;
+	flex-direction: column;
+  }
 body {
 	background-image: url('/assets/login.jpeg');
   background-repeat: no-repeat;
@@ -17,11 +23,6 @@ body {
 	height: 100vh;
 	margin: -20px 0 50px;
 }
-
-h1 {
-	font-weight: bold;
-	margin: 0;
-}
 .w
 {
 	color: #e9eae0;
@@ -29,6 +30,7 @@ h1 {
 .c
 {
 	color: #335314;
+	font-size: 30px;
 }
 h2 {
 	text-align: center;

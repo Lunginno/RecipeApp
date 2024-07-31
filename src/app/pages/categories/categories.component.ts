@@ -7,6 +7,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit{
+
   category!: string;
   meals: any[] = [];
 
@@ -33,4 +34,8 @@ export class CategoriesComponent implements OnInit{
   goToDetails(id: string): void {
     this.router.navigate(['/details', id]);
   }
+  navigateToHome() 
+  {
+    this.router.navigate(['/home']);
+  } 
 }
