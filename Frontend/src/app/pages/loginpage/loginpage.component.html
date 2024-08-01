@@ -1,6 +1,9 @@
 <body>
+    <app-alert-modal [success]="successMessage" *ngIf="successMessage" (close)="successMessage = null"></app-alert-modal>
     <div class="container" [ngClass]="{'right-panel-active': isSignUp}">
         <div class="form-container sign-up-container" *ngIf="isSignUp">
+            
+
             <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
                 <h1 class="c">Create Account</h1>
                 <div class="form-group">

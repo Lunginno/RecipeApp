@@ -12,6 +12,8 @@ import { LoginRegisterComponent } from './pages/loginpage/loginpage.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { AlertModalComponent } from './modals/alert-modal/alert-modal.component';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { CategoriesComponent } from './pages/categories/categories.component';
     LandingpageComponent,
     LoginRegisterComponent,
     ProfileComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AlertModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,  HttpClientModule],
   providers: [],

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { FavouritesService } from 'src/app/services/favourites/favourites.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -8,13 +10,17 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class CategoriesComponent implements OnInit{
 
+
   category!: string;
   meals: any[] = [];
+  favRecipe: { addedToFavourites: boolean } = { addedToFavourites: false };
 
   constructor(
     private categoryservice: CategoryService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private auth: AuthService,
+    private favorite: FavouritesService
   ) { }
 
   ngOnInit(): void {
@@ -38,4 +44,18 @@ export class CategoriesComponent implements OnInit{
   {
     this.router.navigate(['/home']);
   } 
+  addToFavorites(favRecipe: any){  
+    if(this.auth.getIsLoggedIn()){
+      this.favorite.addToFavourites(favRecipe);
+      favRecipe.addedToFavourites = !favRecipe.addedToFavourites;
+      console.log('Recipe added' + this.favorite.getFavourite());
+    }
+    else{
+      alert("User account not found, directing you to sign in...")
+      this.router.navigate(['login']);
+    }
+
+    favRecipe.addedToFavourites = !favRecipe.addedToFavourites;
+    console.log('Recipe added' + this.favorite.getFavourite());
+  }
 }
